@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdlib.h>
+#include <string.h>
 
 typedef unsigned int Oid;
 
@@ -516,6 +517,7 @@ typedef struct Node
 #define newNode(size, tag) \
 ({	Node   *_result; \
 	_result = (Node *) malloc(size); \
+	memset(_result, 0, size); \
 	_result->type = (tag); \
 	_result; \
 })
